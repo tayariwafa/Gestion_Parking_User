@@ -1,0 +1,85 @@
+<!-- -->
+<ion-header>
+
+  <ion-navbar  color="primary">
+      <ion-title>
+          <strong>  Booking Place </strong> 
+             
+        </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="common-bg">
+  <!--slides-->
+  <ion-slides class="to-top" pager>
+    <ion-slide *ngFor="let image of trip.images">
+      <img [src]="image" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <!--services-->
+  <ion-grid class="border-bottom dark-bg">
+    <ion-row>
+      <ion-col text-center>
+        <div class="text-sm">
+          <div>
+            <ion-icon name="time" class="text-white"></ion-icon>
+            <span ion-text color="light">{{ trip.time }}</span>
+            <span ion-text color="light" ></span>
+            <span ion-text color="light" ></span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--high light-->
+  <div class="border-bottom" padding>
+    <span ion-text color="dark" class="bold">details</span>
+        
+    <ul class="highlight">
+      <li *ngFor="let highlight of trip.highlights">
+        <ion-icon name="checkmark" class="text-green"></ion-icon>
+        <span ion-text color="primary">{{ adresse }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!--booking form-->
+  <div class="booking-form card round" margin>
+   <!--  <div class="border-bottom" padding>
+      <h5>select time</h5> -->
+          
+<!--       ///// nom , adresse , nb ddes places disponible  prix d'une place 
+             date deb date fin heure deb heure fin  -->
+
+      <!--choose guest-->
+     <!--  <ion-grid class="filters" no-padding margin-top>
+          <ion-item>
+              <ion-label>
+                  beginning hour</ion-label>
+              <ion-datetime displayFormat="HH:mm:ss" [(ngModel)]="myDatedeb"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>end time</ion-label>
+                <ion-datetime displayFormat="HH:mm:ss" [(ngModel)]="myDateend"></ion-datetime>
+              </ion-item>
+      </ion-grid> -->
+    <!-- </div> -->
+    <div padding class="form-bottom">
+<!--       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> -->
+      <!--booking button-->
+      <button ion-button class="pull-right" color="secondary" tappable (click)="checkout()"> 
+          payment
+      </button>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <button ion-button block> Cancel  </button>
+
+
+</ion-content>

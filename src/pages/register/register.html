@@ -1,0 +1,173 @@
+<!-- -->
+
+<ion-header>
+  <ion-navbar color="primary">
+    
+    <ion-title>
+      <strong>Sign Up</strong> 
+    </ion-title>
+   
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="auth-page">
+  <div class="login-content">
+
+
+      <!-- Login form -->
+    <form class="list-form">
+        <ul *ngIf="errors.length > 0">
+            <li *ngFor="let item of errors">
+              {{item}}
+            </li>
+          </ul>
+
+      <ion-item>
+        <ion-label >
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          First Name
+        </ion-label>
+        <ion-input type="text" placeholder=" " [(ngModel)]="account.Nom_ut" name="nom_ut"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Last Name
+        </ion-label>
+        <ion-input type="text" placeholder=" " [(ngModel)]="account.Prenom_ut" name="prenom_ut"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Phone Number
+        </ion-label>
+        <ion-input type="tel" placeholder=" " [(ngModel)]="account.tel_ut" name="tel_ut"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" placeholder=" " item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder=" " [(ngModel)]="account.Email_ut" name="email_ut"></ion-input>
+      </ion-item>
+      <ion-item>
+        <!-- //[(ngModel)]="gender" -->
+        <ion-label>Matricule</ion-label>
+        <ion-select [(ngModel)]="account.Matricule1" name="matricule1">
+          <ion-option value="tunisie"> تونس</ion-option>
+          <ion-option value="NT">ن ت</ion-option>
+
+         
+        </ion-select>
+      </ion-item>
+      <!-- compris entre 1 et 9 999 -->
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          the registration number
+        </ion-label>
+        <ion-input type="text" placeholder="XXXX" [(ngModel)]="account.Matricule2" name="matricule2"></ion-input>
+      </ion-item>
+      <!-- compris entre 1 et 999 -->
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          serial number
+
+        </ion-label>
+        <ion-input type="text" placeholder="XXX" [(ngModel)]="account.Matricule3" name="matricule3"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>car brand</ion-label>
+        <ion-select [(ngModel)]="account.Marque" name="marque">
+          <ion-option value="Chevrolet"> Chevrolet </ion-option>
+          <ion-option value="Citroën">Citroën</ion-option>
+          <ion-option value="Fiat"> Fiat </ion-option>
+          <ion-option value="Ford">Ford</ion-option>
+          <ion-option value="Holden"> Holden </ion-option>
+          <ion-option value="Honda">Honda</ion-option>
+          <ion-option value="Hyundai"> Hyundai </ion-option>
+          <ion-option value="Kia">Kia </ion-option>
+          <ion-option value="Lancia"> Lancia </ion-option>
+          <ion-option value="Mazda">Mazda</ion-option>
+          <ion-option value="Mitsubishi"> Mitsubishi </ion-option>
+          <ion-option value="Peugeot">Peugeot</ion-option>
+          <ion-option value="Opel"> Opel </ion-option>
+          <ion-option value="Nissan">Nissan</ion-option>
+          <ion-option value="Renault"> Renault </ion-option>
+          <ion-option value="Seat">Seat</ion-option>
+
+          <ion-option value="Škoda">Škoda </ion-option>
+          <ion-option value="Subaru"> Subaru </ion-option>
+          <ion-option value="Suzuki">Suzuki </ion-option>
+          <ion-option value="Toyota"> Toyota </ion-option>
+          <ion-option value="Vauxhall">Vauxhall</ion-option>
+          <ion-option value="Volkswagen">Volkswagen </ion-option>
+          <ion-option value="Land Rover">Land Rover</ion-option>
+          <ion-option value="BMW"> BMW </ion-option>
+          <ion-option value="Audi">Audi</ion-option>
+
+          <ion-option value="Volvo">Volvo </ion-option>
+          <ion-option value="Jaguar"> Jaguar </ion-option>
+          <ion-option value="Lexus">Lexus </ion-option>
+          <ion-option value="Mercedes-Benz"> Mercedes-Benz </ion-option>
+
+          <ion-option value="other">other</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>color </ion-label>
+        <ion-select [(ngModel)]="account.couleur" name="couleur">
+          <ion-option value="red"> Red </ion-option>
+          <ion-option value="orange">Orange</ion-option>
+          <ion-option value="yellow"> Yellow </ion-option>
+          <ion-option value="green">Green</ion-option>
+          <ion-option value="blue"> Blue </ion-option>
+
+          <ion-option value="violet">Violet</ion-option>
+          <ion-option value="brown"> Brown </ion-option>
+          <ion-option value="black">Black</ion-option>
+          <ion-option value="white"> White </ion-option>
+          
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          UserName
+        </ion-label>
+        <ion-input type="text" placeholder=" " [(ngModel)]="account.NomUtilisateur_ut" name="nomutilisateur_ut"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder=" " [(ngModel)]="account.mdp_ut" name="password"></ion-input>
+      </ion-item>
+    </form>
+
+    <div margin-top>
+      <button ion-button block color="dark" tappable (click)="register()">
+        SIGN UP
+      </button>
+
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+    </div>
+
+  </div>
+</ion-content>

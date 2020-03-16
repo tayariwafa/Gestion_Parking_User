@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong> My Favorites  </strong> 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+  <ion-item-group>
+
+         <ion-item *ngIf="!isBusy">
+
+      <ion-row>
+
+        <ion-col>
+          <b>Nom Parking </b>
+        </ion-col>
+
+        <ion-col>
+          <b>Adresse</b>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row *ngFor="let Fav of Favoris">
+        <ion-col>
+          {{Fav.Nom_p}}
+        </ion-col>
+        <ion-col>
+          {{Fav.Ville_p}}
+        </ion-col>
+        <ion-col>
+            
+          </ion-col>
+        <ion-col>
+          <button ion-button icon-left btn btn-success small (click)="favoris()">
+         
+           Réserver
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

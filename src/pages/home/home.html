@@ -1,0 +1,45 @@
+<!-- -->
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        <strong>My Park </strong>
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button tappable (click)="presentNotifications($event)">
+          <ion-icon name="notifications"></ion-icon>
+        </button>
+  
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="animated fadeIn common-bg">
+  
+    <ion-item>
+      <!-- <ion-label floating>Enter Address</ion-label> -->
+      <!-- <ion-input id="txtHome" type="text" [(ngModel)]="end" (blur)="calculateAndDisplayRoute()"> </ion-input>-->
+        <!-- <ion-input (click)="showAddressModal()" [(ngModel)]="address.place"type="text" placeholder="Choisir une adresse!">             
+          </ion-input> -->
+
+          
+          <google-places-autocomplete (callback)="detail($event[0])" [(ngModel)]="end"  key="AIzaSyCnahpwY4LRTYlzEHnER3B_Y8NR1HzmrVE"></google-places-autocomplete>
+    </ion-item>
+  
+    <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+      <agm-marker [latitude]="this.start.lat" [longitude]="this.start.lng" #map></agm-marker>
+    </agm-map> -->
+    <div #map id="map"></div> 
+    <ion-list>
+      <ion-item> De : {{googleResponse.depart}}</ion-item>
+      <ion-item> A : {{googleResponse.arrive}}</ion-item>
+      <ion-item> Distance : {{googleResponse.distance}}</ion-item>
+      <ion-item> Temps : {{googleResponse.temps}}</ion-item>
+    </ion-list>
+    <!-- <div #map id="map"></div> -->
+  
+  
+  
+  </ion-content>

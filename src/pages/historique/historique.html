@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>My History</strong> 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+
+  <ion-label>Liste des réservations :</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>Date début</ion-col>
+      <ion-col col-3>Date fin</ion-col>
+      <ion-col col-3>Montant</ion-col>
+      <ion-col col-3>Action</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let reservation of reservations">
+      <ion-col col-3> {{reservation.DateDeb}}</ion-col>
+      <ion-col col-3> {{reservation.DateFin}}</ion-col>
+      <ion-col col-3>{{reservation.Montant_espece}}</ion-col>
+      <ion-col col-3>
+        <a (click)="delete(reservation.id)">
+          <ion-icon name="trash" color="danger"></ion-icon>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
